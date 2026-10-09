@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* Paleta Edukhan (extraída do site institucional) */
+@theme {
+  --color-royal: #0b27e8;
+  --color-sky: #4fb4ea;
+  --color-sun: #f7ce4f;
+  --color-lime: #b9dc52;
+  --color-mint: #8fdb7e;
+  --color-orchid: #dd6fe0;
+  --color-violet: #6d55f0;
+  --color-ink: #0a1370;
+
+  --font-display: var(--font-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white font-display text-royal antialiased;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-ink);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* Painel do card no formato "balão de fala", assinatura visual do site */
+.bubble {
+  --tail: 22px;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--tail)),
+    calc(50% + var(--tail)) calc(100% - var(--tail)),
+    50% 100%,
+    calc(50% - var(--tail)) calc(100% - var(--tail)),
+    0 calc(100% - var(--tail))
+  );
+}
+
+/* Etiqueta rosa do hero (balão com ponta para baixo) */
+.tag-tail {
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 72% 78%, 64% 100%, 56% 78%, 0 78%);
+}
