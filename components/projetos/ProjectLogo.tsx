@@ -11,8 +11,8 @@ interface ProjectLogoProps {
 }
 
 /**
- * Exibe a logomarca do projeto. Enquanto o arquivo não existir (404),
- * mostra um placeholder com o selo do Edukhan e o nome do projeto.
+ * Exibe a logomarca do projeto. Se o arquivo não existir (404),
+ * mostra um placeholder com o selo do Edukhan.
  */
 export function ProjectLogo({ title, logoUrl, tone }: ProjectLogoProps) {
   const [failed, setFailed] = useState(false);
@@ -25,7 +25,7 @@ export function ProjectLogo({ title, logoUrl, tone }: ProjectLogoProps) {
         alt={`Logomarca do projeto ${title}`}
         width={320}
         height={200}
-        className="relative z-10 max-h-40 w-auto max-w-[70%] object-contain"
+        className="relative z-10 max-h-24 w-auto max-w-[85%] object-contain md:max-h-40 md:max-w-[70%]"
         onError={() => setFailed(true)}
       />
     );
@@ -42,10 +42,10 @@ export function ProjectLogo({ title, logoUrl, tone }: ProjectLogoProps) {
         alt=""
         width={96}
         height={96}
-        className="h-24 w-24"
+        className="h-14 w-14 md:h-24 md:w-24"
       />
       <span
-        className={`rounded-md px-2.5 py-1 text-xs font-bold ${
+        className={`hidden rounded-md px-2.5 py-1 text-xs font-bold md:inline ${
           dark ? "bg-white/15 text-white" : "bg-white/60 text-ink"
         }`}
       >

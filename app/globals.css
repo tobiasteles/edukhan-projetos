@@ -32,18 +32,20 @@
   }
 }
 
-/* Painel do card no formato "balão de fala", assinatura visual do site */
-.bubble {
-  --tail: 22px;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% calc(100% - var(--tail)),
-    calc(50% + var(--tail)) calc(100% - var(--tail)),
-    50% 100%,
-    calc(50% - var(--tail)) calc(100% - var(--tail)),
-    0 calc(100% - var(--tail))
-  );
+/* Painel do card em formato de "balão de fala" (só no desktop; no celular o card é horizontal) */
+@media (min-width: 48rem) {
+  .bubble {
+    --tail: 22px;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - var(--tail)),
+      calc(50% + var(--tail)) calc(100% - var(--tail)),
+      50% 100%,
+      calc(50% - var(--tail)) calc(100% - var(--tail)),
+      0 calc(100% - var(--tail))
+    );
+  }
 }
 
 /* Etiqueta rosa do hero (balão com ponta para baixo) */

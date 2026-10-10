@@ -33,7 +33,7 @@ export function PixelDivider({ color, seed = 7, flip = false }: PixelDividerProp
     <svg
       aria-hidden="true"
       focusable="false"
-      className={`block h-24 w-full ${flip ? "-scale-y-100" : ""}`}
+      className={`block h-10 w-full md:h-24 ${flip ? "-scale-y-100" : ""}`}
       viewBox={`0 0 ${COLS} ${ROWS}`}
       preserveAspectRatio="xMidYMin slice"
       shapeRendering="crispEdges"
